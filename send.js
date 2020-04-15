@@ -118,6 +118,15 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 attachment: game_step.story,
                 access_token: TOKEN
             })
+
+            await api('messages.send', {
+                user_id: user_id,
+                random_id:  Math.floor(Math.random()*999999999),
+                message: "Если хочешь пройти ещё раз, жми «Начать»",
+                keyboard: restart_keyboard,
+                group_id: GROUP,
+                access_token: TOKEN
+            })
         }
 
         else if (mes_type === 'simple'){
