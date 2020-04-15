@@ -9,13 +9,14 @@ const check_in_step = require("./db/check_in_step.js");
 const send =require('./send.js');
 
 async function main() {
+    // await add(52167654);
     //await check_in_step(52167654);
-    // let game_step = await get_game_step(52167654);
+    let game_step = await get_game_step(52167654);
     // await send(52167654,game_step,null, 'Хай','simple');
-    // await send(52167654,game_step, null,'story');
+    await send(52167654,game_step, null,'story');
 
     //await send(52167654,game_step, null,'answer', 'answer.1');
-    await add(52167654);
+    //
     // await check_in_answer(52167654,4,4);
     //
     // await check_final(52167654);

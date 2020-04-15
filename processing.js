@@ -25,7 +25,12 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
             }
             else {
                 let game_step = await get_game_step(userId);
-                await send(userId, game_step, null, 'story');
+                if (game_step.id_step === 1){
+                    await send(userId, game_step, null, 'start');
+                }
+                else{
+                    await send(userId, game_step, null, 'story');
+                }
             }
         }
 

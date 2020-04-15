@@ -2,7 +2,7 @@ const api = require('vk-easy');
 const {TOKEN, GROUP} = require('./config');
 
 let next_keyboard = JSON.stringify({
-    one_time: true,
+    one_time: false,
     inline: true,
     buttons: [
         [{
@@ -40,7 +40,7 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
     try {
         if (mes_type === 'start') {
 
-            await api('messages.send', {
+            let res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
@@ -48,10 +48,12 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 keyboard: next_keyboard,
                 attachment: game_step.story,
                 access_token: TOKEN
-            })
+            });
+            console.log(user_id, 'Cообщение отправлено.', mes_type, res)
         }
 
         else if (mes_type === 'story'){
+
             let keyboard = JSON.stringify({
                 one_time: false,
                 inline: true,
@@ -76,7 +78,7 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 ]
             });
 
-            await api('messages.send', {
+            let res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
@@ -85,21 +87,21 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 attachment: game_step.story,
                 access_token: TOKEN
             });
+            console.log(user_id, 'Cообщение отправлено.', mes_type, res);
 
-            if (game_step.id_step !== 1){
-                await api('messages.send', {
-                    user_id: user_id,
-                    random_id:  Math.floor(Math.random()*999999999),
-                    message: "Выбор за тобой",
-                    group_id: GROUP,
-                    access_token: TOKEN
-                })
-            }
+            res = await api('messages.send', {
+                user_id: user_id,
+                random_id:  Math.floor(Math.random()*999999999),
+                message: "Выбор за тобой",
+                group_id: GROUP,
+                access_token: TOKEN
+            });
+            console.log(user_id, 'Cообщение отправлено.', 'simple', res)
 
         }
 
         else if (mes_type === 'answer'){
-            await api('messages.send', {
+            let res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
@@ -107,11 +109,12 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 keyboard: next_keyboard,
                 attachment: game_step[extra],
                 access_token: TOKEN
-            })
+            });
+            console.log(user_id, 'Cообщение отправлено.', mes_type, res)
         }
 
         else if (mes_type === 'final'){
-            await api('messages.send', {
+            let res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
@@ -120,29 +123,32 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 attachment: game_step.story,
                 access_token: TOKEN
             });
+            console.log(user_id, 'Cообщение отправлено.', mes_type, res);
 
-            await api('messages.send', {
+            res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: "Если хочешь пройти ещё раз, жми «Начать»",
                 keyboard: restart_keyboard,
                 group_id: GROUP,
                 access_token: TOKEN
-            })
+            });
+            console.log(user_id, 'Cообщение отправлено.', 'simple', res)
         }
 
         else if (mes_type === 'simple'){
 
-            await api('messages.send', {
+            let res = await api('messages.send', {
                 user_id: user_id,
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
                 group_id: GROUP,
                 access_token: TOKEN
-            })
+            });
+            console.log(user_id, 'Cообщение отправлено.', mes_type, res)
         }
 
-        console.log(user_id, 'Cообщение отправлено.', mes_type)
+
     }
 
     catch (e) {
