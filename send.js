@@ -25,7 +25,6 @@ let next_keyboard = JSON.stringify({
 
 let restart_keyboard = JSON.stringify({
     one_time: false,
-    inline: true,
     buttons: [
         [{
             action: {
