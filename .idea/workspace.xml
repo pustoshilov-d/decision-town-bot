@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b17472c0-f8f2-4d2c-a2ce-591352bf8e78" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/go_final.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/add_player.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/add_player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/check_final.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/check_final.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/check_in_answer.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/check_in_answer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/check_in_step.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/check_in_step.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/dbConnection.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/get_game_step.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/get_game_step.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/no_player.js" beforeDir="false" afterPath="$PROJECT_DIR$/db/no_player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/processing.js" beforeDir="false" afterPath="$PROJECT_DIR$/processing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/send.js" beforeDir="false" afterPath="$PROJECT_DIR$/send.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586944937961</updated>
-      <workItem from="1586944939844" duration="35387000" />
+      <workItem from="1586944939844" duration="36461000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1586981294882</created>
@@ -63,7 +57,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586981294883</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Pool to Client">
+      <created>1586986274706</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1586986274707</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,13 +72,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="Pool to Client" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pool to Client" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="598" y="158" key="CommitChangelistDialog2" timestamp="1586981283910">
+    <state x="598" y="158" key="CommitChangelistDialog2" timestamp="1586987450762">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="598" y="158" key="CommitChangelistDialog2/0.40.1920.1040@0.40.1920.1040" timestamp="1586981283910" />
+    <state x="598" y="158" key="CommitChangelistDialog2/0.40.1920.1040@0.40.1920.1040" timestamp="1586987450762" />
     <state x="461" y="202" key="SettingsEditor" timestamp="1586955574734">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>

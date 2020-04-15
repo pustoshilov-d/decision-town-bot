@@ -5,6 +5,7 @@ const get_game_step = require("./db/get_game_step.js");
 const check_in_answer = require("./db/check_in_answer.js");
 const check_final = require("./db/check_final.js");
 const check_in_step = require("./db/check_in_step.js");
+const go_final = require("./db/go_final.js");
 
 
 module.exports = async ({from_id: userId, text: text, payload}) => {
@@ -13,14 +14,14 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
         if (payload === undefined) {
             console.log(userId, 'входящее сообщение',text);
 
-            if ((text === "start" && await no_player(userId)) || text === "restart") {
+            if ((text === "start" && await no_player(userId)) || text === "Заново") {
                 //если игрока нет в базе, занести, с обнулением
                     await add_player(userId);
                     let game_step = await get_game_step(userId);
                     await send(userId, game_step,null,'start')
             }
 
-            else if (text === "start"){
+            else if (text === "start" || text === "Продолжить"){
                 let game_step = await get_game_step(userId);
                 await send(userId, game_step,null,'story');
                 if (!await check_final(userId)) {
@@ -63,6 +64,12 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
                 await send(userId, game_step, null,'story');
                 await send(userId, null, 'Что ты выберешь?', 'simple');
                 }
+            }
+
+            else if (payload.next_type === "final") {
+                await go_final(userId);
+                let game_step = await get_game_step(userId);
+                await send(userId, game_step,  null,'final')
             }
         }
     }

@@ -13,8 +13,28 @@ let next_keyboard = JSON.stringify({
             },
             "color": "positive"
         }],
+        [{
+            action: {
+                type: "text",
+                label: "Закончить",
+                payload: {next_type: "final"}
+            },
+            "color": "negative"
+        }],
     ]});
 
+let restart_keyboard = JSON.stringify({
+    one_time: false,
+    inline: true,
+    buttons: [
+        [{
+            action: {
+                type: "text",
+                label: "Заново",
+            },
+            "color": "positive"
+        }],
+    ]});
 
 module.exports = async (user_id, game_step, text, mes_type, extra) => {
     try {
@@ -85,6 +105,7 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 random_id:  Math.floor(Math.random()*999999999),
                 message: text !== null ? text : "",
                 group_id: GROUP,
+                keyboard: restart_keyboard,
                 attachment: game_step.story,
                 access_token: TOKEN
             })
