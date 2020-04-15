@@ -1,0 +1,21 @@
+{
+  "name": "decision_town_bot2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "app": "node app.js",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "^4.17.1",
+    "node-postgres": "^0.1.4",
+    "nodemon": "^2.0.3",
+    "pg": "^8.0.2",
+    "vk-easy": "^1.4.1"
+  }
+}
