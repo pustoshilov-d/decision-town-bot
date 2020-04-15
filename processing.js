@@ -14,14 +14,14 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
         if (payload === undefined) {
             console.log(userId, 'входящее сообщение',text);
 
-            if ((text === "start" && await no_player(userId)) || text === "Заново") {
+            if ((text === "Начать" && await no_player(userId)) || text === "Заново") {
                 //если игрока нет в базе, занести, с обнулением
                     await add_player(userId);
                     let game_step = await get_game_step(userId);
                     await send(userId, game_step,null,'start')
             }
 
-            else if (text === "start" || text === "Продолжить"){
+            else if (text === "Начать" || text === "Продолжить"){
                 let game_step = await get_game_step(userId);
                 await send(userId, game_step,null,'story');
                 if (!await check_final(userId)) {
