@@ -6,7 +6,7 @@
     "CONFIRMATION": "b98c8999",
     "GROUP": 194266987,
     "TOKEN": "bd7edf641a26f1524990a37cb3ce28c965074c737305c302f911af519b75bd6026e16ee568159dd7e825f",
-    "TEST_FLAG": 1,
+    "TEST_FLAG": "1",
 
     "DATABASE_URL": "postgres://dzgokyclkcnctw:cb7ae5ce8daed6ad59773bbda4fdd0e49599546edf0c61a525c6c5bf0d827c1a@ec2-54-247-103-43.eu-west-1.compute.amazonaws.com:5432/d3bqi26kbc76ec"
   },

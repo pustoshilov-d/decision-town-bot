@@ -7,7 +7,7 @@ module.exports = async (user_id) => {
         const sql = `SELECT * FROM players WHERE id_user = ${user_id}`;
         res = await client.query(sql);
         client.end();
-        console.log(user_id,'Пользователь есть в базе', res.rowCount === 0);
+        console.log(user_id,'Пользователя нет в базе', res.rowCount === 0);
 
         return res.rowCount === 0;
     }

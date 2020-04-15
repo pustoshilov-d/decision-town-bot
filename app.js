@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.post('/', async (req,res) => {
     const {body} = req;
 
-    if (TEST_FLAG===1) {
+    if (TEST_FLAG==='1') {
     console.log('*TEST_FLAG*', body);
     }
 
