@@ -1,4 +1,4 @@
-const createPool = require('./dbConnection.js');
+const createClient = require('./dbConnection.js');
 const api = require('vk-easy');
 const {TOKEN} = require('../config');
 
@@ -12,11 +12,11 @@ module.exports = async (user_id) => {
         let user_name = ans.response[0].first_name + " " + ans.response[0].last_name;
         // console.log(user_name);
 
-        const pool = await createPool();
-        await pool.connect();
+        const client = await createClient();
+        await client.connect();
         const sql = `INSERT INTO players (id_user, user_name) VALUES (${user_id}, '${user_name}')`;
-        await pool.query(sql);
-        pool.end();
+        await client.query(sql);
+        client.end();
 
         console.log('\n', user_id, 'Новый пользователь добавлен:', user_name);
     }

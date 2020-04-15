@@ -1,12 +1,12 @@
-const createPool = require('./dbConnection.js');
+const createClient = require('./dbConnection.js');
 
 module.exports = async (user_id) => {
     try{
-        const pool = await createPool();
-        await pool.connect();
+        const client = await createClient();
+        await client.connect();
         const sql = `SELECT * FROM players WHERE id_user = ${user_id}`;
-        res = await pool.query(sql);
-        pool.end();
+        res = await client.query(sql);
+        client.end();
         console.log(user_id,'Пользователь есть в базе', res.rowCount === 0);
 
         return res.rowCount === 0;

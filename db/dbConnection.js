@@ -1,9 +1,9 @@
 const {DATABASE_URL} = require('../config.js');
-const {Pool} = require('pg');
+const {Client} = require('pg');
 
-module.exports = function createPool () {
+module.exports = function createClient () {
   try{
-    return new Pool({
+    return new Client({
       connectionString: DATABASE_URL,
       ssl: {sslmode: 'require',
         rejectUnauthorized: false

@@ -1,12 +1,12 @@
-const createPool = require('./dbConnection.js');
+const createClient = require('./dbConnection.js');
 
 module.exports = async (user_id, step_id, answer) => {
     try{
-        const pool = await createPool();
-        await pool.connect();
+        const client = await createClient();
+        await client.connect();
         const sql = `UPDATE players SET "${step_id}" = ${answer} WHERE id_user = ${user_id} AND id = (SELECT MAX(id) FROM players WHERE id_user = ${user_id})`;
-        await pool.query(sql);
-        pool.end();
+        await client.query(sql);
+        client.end();
 
         console.log(user_id, 'У пользователя добавлен новый ответ', step_id, answer);
     }

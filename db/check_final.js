@@ -1,13 +1,13 @@
-const createPool = require('./dbConnection.js');
+const createClient = require('./dbConnection.js');
 
 module.exports = async (user_id) => {
     try{
-        const pool = await createPool();
-        await pool.connect();
+        const client = await createClient();
+        await client.connect();
         const sql = `SELECT CASE WHEN (SELECT MAX(id_step) FROM game) = (SELECT cur_step FROM players WHERE id_user = ${user_id} ORDER BY id DESC LIMIT 1) THEN 'true' ELSE 'false' END`;
-        let res = await pool.query(sql);
+        let res = await client.query(sql);
 
-        pool.end();
+        client.end();
         res = res.rows[0].case === 'true';
         console.log(user_id, 'Пользователь на финале', res);
         return res;
