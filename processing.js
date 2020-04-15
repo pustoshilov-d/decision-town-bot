@@ -24,9 +24,7 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
             else if (text === "Начать" || text === "Продолжить"){
                 let game_step = await get_game_step(userId);
                 await send(userId, game_step,null,'story');
-                if (!await check_final(userId)) {
-                    await send(userId, null, 'Что ты выберешь?', 'simple');
-                }
+
             }
         }
 
@@ -49,20 +47,24 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
             }
 
             else if (payload.next_type === "story") {
-                //получили кнопку далее
-                //зачекинить степ
-                await check_in_step(userId);
-                //загрузить текущий степ
-                let game_step = await get_game_step(userId);
-
-                if (await check_final(userId)) {
-                    //ИЛИ если финал, просто стори
-                    await send(userId, game_step,  null,'final')
+                if (await check_final(userId)){
+                    await send(userId,null,"Все этапы пройдены. Жми «Заново»", 'simple')
                 }
                 else {
-                    //выслать стори с кнопками ответов
-                await send(userId, game_step, null,'story');
-                await send(userId, null, 'Что ты выберешь?', 'simple');
+                        //получили кнопку далее
+                    //зачекинить степ
+                    await check_in_step(userId);
+                    //загрузить текущий степ
+                    let game_step = await get_game_step(userId);
+
+                    if (await check_final(userId)) {
+                        //ИЛИ если финал, просто стори
+                        await send(userId, game_step,  null,'final')
+                    }
+                    else {
+                        //выслать стори с кнопками ответов
+                    await send(userId, game_step, null,'story');
+                    }
                 }
             }
 

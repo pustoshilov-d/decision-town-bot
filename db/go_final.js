@@ -12,6 +12,6 @@ module.exports = async (user_id) => {
 
     }
     catch (e) {
-        console.log(user_id, 'ошибка в check_final.js', e)
+        console.log(user_id, 'ошибка в go_final.js', e)
     }
 };

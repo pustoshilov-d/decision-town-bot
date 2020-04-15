@@ -11,7 +11,7 @@ let next_keyboard = JSON.stringify({
                 label: "Далее",
                 payload: {next_type: "story"}
             },
-            "color": "positive"
+            "color": "secondary"
         }],
         [{
             action: {
@@ -19,7 +19,7 @@ let next_keyboard = JSON.stringify({
                 label: "Закончить",
                 payload: {next_type: "final"}
             },
-            "color": "negative"
+            "color": "secondary"
         }],
     ]});
 
@@ -31,7 +31,7 @@ let restart_keyboard = JSON.stringify({
                 type: "text",
                 label: "Заново",
             },
-            "color": "positive"
+            "color": "secondary"
         }],
     ]});
 
@@ -83,7 +83,16 @@ module.exports = async (user_id, game_step, text, mes_type, extra) => {
                 keyboard: keyboard,
                 attachment: game_step.story,
                 access_token: TOKEN
+            });
+
+            await api('messages.send', {
+                user_id: user_id,
+                random_id:  Math.floor(Math.random()*999999999),
+                message: "Выбор за тобой",
+                group_id: GROUP,
+                access_token: TOKEN
             })
+
         }
 
         else if (mes_type === 'answer'){

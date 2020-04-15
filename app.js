@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const {PORT, CONFIRMATION, USER} = require('./config');
+const {PORT, CONFIRMATION, TEST_FLAG} = require('./config');
 const app = express();
 const processing = require('./processing');
 
@@ -9,7 +9,10 @@ app.use(bodyParser.json());
 
 app.post('/', async (req,res) => {
     const {body} = req;
-    // console.log('Пришло: \n', body);
+
+    if (TEST_FLAG===1) {
+    console.log('*TEST_FLAG*', body);
+    }
 
     switch (body.type) {
         case 'confirmation':
@@ -17,7 +20,6 @@ app.post('/', async (req,res) => {
             break;
 
         case 'message_new':
-            // console.log('Сообщение\n', body);
             await processing(body.object.message);
             res.end('ok');
             break;
