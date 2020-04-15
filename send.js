@@ -29,7 +29,8 @@ let restart_keyboard = JSON.stringify({
         [{
             action: {
                 type: "text",
-                label: "Заново",
+                label: "Начать",
+                payload: {next_type: "start"}
             },
             "color": "secondary"
         }],

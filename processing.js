@@ -12,7 +12,7 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
     try {
         console.log(userId, 'входящее сообщение',text);
 
-        if (text === "Заново" || text === "Начать"){
+        if (text === "Начать"){
             //если игрока нет в базе, занести, с обнулением
             await add_player(userId);
             let game_step = await get_game_step(userId);
@@ -21,7 +21,7 @@ module.exports = async ({from_id: userId, text: text, payload}) => {
 
         else if (text === "Продолжить"){
             if (await check_final(userId)){
-                await send(userId,null,"Все этапы пройдены. Жми «Заново»", 'simple')
+                await send(userId,null,"Все этапы пройдены. Жми «Начать»", 'simple')
             }
             else {
                 let game_step = await get_game_step(userId);
