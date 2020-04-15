@@ -2,7 +2,7 @@ const api = require('vk-easy');
 const {TOKEN, GROUP} = require('./config');
 
 let next_keyboard = JSON.stringify({
-    one_time: false,
+    one_time: true,
     inline: true,
     buttons: [
         [{
