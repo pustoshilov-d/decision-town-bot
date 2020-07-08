@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b17472c0-f8f2-4d2c-a2ce-591352bf8e78" name="Default Changelist" comment="">
+    <list default="true" id="b17472c0-f8f2-4d2c-a2ce-591352bf8e78" name="Default Changelist" comment="good">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing.js" beforeDir="false" afterPath="$PROJECT_DIR$/processing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/send.js" beforeDir="false" afterPath="$PROJECT_DIR$/send.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node-postgres/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-postgres/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,18 +18,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/db" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.16.3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mess-sender" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -48,7 +47,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586944937961</updated>
-      <workItem from="1586944939844" duration="43773000" />
+      <workItem from="1586944939844" duration="45067000" />
+      <workItem from="1587141194093" duration="3277000" />
+      <workItem from="1587490800705" duration="1025000" />
+      <workItem from="1587570988188" duration="1919000" />
+      <workItem from="1588959352528" duration="959000" />
+      <workItem from="1589043677196" duration="529000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1586981294882</created>
@@ -127,11 +131,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586993903020</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="good">
+      <created>1586995094457</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1586995094457</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
@@ -141,14 +152,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="good" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="598" y="158" key="CommitChangelistDialog2" timestamp="1586993901599">
+    <state x="598" y="40" key="CommitChangelistDialog2" timestamp="1587576522004">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="598" y="158" key="CommitChangelistDialog2/0.40.1920.1040@0.40.1920.1040" timestamp="1586993901599" />
-    <state x="461" y="202" key="SettingsEditor" timestamp="1586955574734">
+    <state x="598" y="40" key="CommitChangelistDialog2/0.40.1920.1040@0.40.1920.1040" timestamp="1587576522004" />
+    <state x="740" y="314" key="FileChooserDialogImpl" timestamp="1589044204139">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="461" y="202" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1586955574734" />
+    <state x="740" y="314" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1589044204139" />
+    <state x="449" y="40" key="SettingsEditor" timestamp="1587571056261">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="449" y="40" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1587571056261" />
     <state x="616" y="260" key="run.anything.popup" timestamp="1586992391690">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
