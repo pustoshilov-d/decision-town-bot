@@ -14,7 +14,7 @@
     "body-parser": "latest",
     "express": "^4.17.1",
     "node-postgres": "^0.1.4",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.20",
     "pg": "^8.0.2",
     "vk-easy": "^1.4.1"
   }
